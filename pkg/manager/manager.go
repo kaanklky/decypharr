@@ -392,6 +392,8 @@ func (m *Manager) Start(ctx context.Context) error {
 		Str("mount_path", m.config.Mount.MountPath).
 		Msg("Starting manager")
 
+	m.reconcileProviders()
+
 	// run the migration process
 	m.migrate()
 
